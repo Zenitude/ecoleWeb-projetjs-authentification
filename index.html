@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS N° 11 : Authentification avec Firebase</title>
+        <link rel="stylesheet" href="styles/style.css">
+    </head>
+
+    <body>
+        <div id="container-btn">
+            <button id="btn-inscription">S'inscrire</button>
+            <button id="btn-connection">Se connecter</button>
+            <button id="btn-deconnection">Se déconnecter</button>
+        </div>
+        
+        <div id="container-contenu">
+
+            <h1>Bienvenue, inscrivez-vous ou connectez-vous.</h1>
+
+            <div id="contenu">Contenu public.</div>
+
+            <div id="formualaires">
+
+                <form id="form-inscription">
+                        
+                    <h2>Inscription</h2>
+
+                    <p id="msgInscription"></p>
+                    <label for="mailInscription">Entrez un email</label>
+                    <input type="mail" id="mailInscription" placeholder="Entrez un email">                   
+                    
+                    <label for="mdpInscription">Entrez un mot de passe</label>
+                    <input type="password" id="mdpInscription" placeholder="Entrez un mot de passe">
+                    
+                    <button type="submit" id="btn-inscrire">S'inscrire</button>
+                
+                </form>
+
+                <form id="form-connection">
+                
+                    <h2>Connection</h2>
+                    
+                    <label for="mailConnection">Entrez un email</label>
+                    <input type="mail" id="mailConnection" placeholder="Entrez un email">
+                    
+                    <p id="erreurMail"></p>
+                    
+                    <label for="mdpConnection">Entrez un mot de passe</label>
+                    <input type="password" id="mdpConnection" placeholder="Entrez un mot de passe">
+                    <p id="erreurMdp"></p>
+                    
+                    <button type="submit" id="btn-connecter">Se connecter</button>
+                
+                </form>
+
+            </div>
+            
+        </div>
+
+         <!-- The core Firebase JS SDK is always required and must be listed first -->
+         <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+         <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+         <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+ 
+         <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+ 
+        <script>
+            // Your web app's Firebase configuration
+            const firebaseConfig = 
+            {
+                apiKey: "AIzaSyBMAF7AkgyKfvAaxOo7zzb2jMr1_-oljBg",
+                authDomain: "authentification-51bb8.firebaseapp.com",
+                projectId: "authentification-51bb8",
+                storageBucket: "authentification-51bb8.appspot.com",
+                messagingSenderId: "1052528797373",
+                appId: "1:1052528797373:web:733fa5ae7b2bcd4eeaf9d4",
+                measurementId: "G-F9X75JGQ8Y"
+            };
+
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+
+            const auth = firebase.auth();
+            const db = firebase.firestore();
+        </script>
+
+        <script src="scripts/app.js"></script>
+    </body>
+</html>
